@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.example.Week2.databinding.FragmentMainBinding
+import kotlin.random.Random
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,6 +33,9 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val num1  = Random.nextInt(0, 100)
+        val num2 = Random.nextInt(0, 100)
+
         binding.btnStart.setOnClickListener{
             val playerName = binding.txtName.text.toString()
             val action = MainFragmentDirections.actionGameFragment(playerName)
