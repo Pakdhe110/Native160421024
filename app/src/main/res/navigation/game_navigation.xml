@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/game_navigation"
+    app:startDestination="@id/mainFragment2">
+    <fragment
+        android:id="@+id/mainFragment2"
+        android:name="com.example.week2.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/actionGameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.week2.GameFragment"
+        android:label="GameFragment" >
+        <action
+            android:id="@+id/actionMainFragment"
+            app:destination="@id/mainFragment2"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <argument
+            android:name="player_name"
+            app:argType="string" />
+    </fragment>
+</navigation>
